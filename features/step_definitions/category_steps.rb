@@ -1,7 +1,8 @@
-Given(/^some categories exist$/) do
-  Category.create!(:name => "Gluten Free")
-  Category.create!(:name => "Low-Fat")
-  Category.create!(:name => "Healthy")
+Given(/^some categories exist with some recipes$/) do
+  ["Gluten Free", "Low-Fat", "Christmas"].each do |cat_name|
+    cat = Category.create!(:name => cat_name)
+    cat.recipes.create(:title => "Baked Beans")
+  end
 end
 
 Given(/^that I am on the homepage$/) do
@@ -12,6 +13,7 @@ When(/^I select a category$/) do
   click_on "Gluten Free"
 end
 
-Then(/^I should see information about that category$/) do
-  pending # express the regexp above with the code you wish you had
+Then(/^I should see all the recipes in that category$/) do
+  assert page.has_content?("Baked Beans"), "Couldn't find Baked Beans"  
 end
+
