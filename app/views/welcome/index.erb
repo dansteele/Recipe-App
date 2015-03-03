@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RecipeApp</title>
+</head>
+<body>
+
+  <nav id="sidebar">
+  <h3>Categories</h3>
+    <ul id="categories">
+      <% @categories.each do |category| %>
+        <li><%= link_to category.name.titleize, category_path(category) %></li>
+      <% end %>
+    </ul>
+  </nav>
+
+  <main>
+    <h1>My Amazing Recipe App</h1>
+  </main>
+
+</body>
+</html>
