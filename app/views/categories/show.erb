@@ -1,31 +1,12 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>RecipeApp</title>
-</head>
-<body>
 
-  <nav id="sidebar">
-  <h3>Categories</h3>
-    <ul id="categories">
-      <% @categories.each do |category| %>
-        <li><%= link_to category.name.titleize, category_path(category) %></li>
-      <% end %>
-    </ul>
-  </nav>
+<h1><%= @category.name %> Category</h1>
 
-  <main>
-    <h1><%= @category.name %> Category</h1>
-
-    <h3>Recipes:</h3>
-    <ul>
-      <% @category.recipes.each do |recipe| %>
-        <li class="recipe">
-          <h4><%= recipe.title %></h4>
-        </li>
-      <% end %>
-    </ul>
-  </main>
-
-</body>
-</html>
+<h3>Recipes:</h3>
+<ul>
+  <% @category.recipes.each do |recipe| %>
+    <li class="recipe">
+      <h4><%= recipe.title %></h4>
+    </li>
+  <% end %>
+</ul>
+ 
