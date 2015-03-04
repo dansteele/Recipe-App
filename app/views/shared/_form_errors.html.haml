@@ -1,0 +1,4 @@
+- unless @model.errors.full_messages.length == 0
+  %ul
+    - @model.errors.full_messages.each do |error|
+      %li= error
