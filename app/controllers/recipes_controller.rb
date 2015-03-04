@@ -5,8 +5,13 @@ class RecipesController < ApplicationController
   end
 
   def create
-    @recipe = Recipe.create(params_whitelist)
-    redirect_to recipe_path(@recipe), :notice => "Recipe Created"
+    @recipe = Recipe.new(params_whitelist)
+    # binding.pry
+    if @recipe.save
+      redirect_to recipe_path(@recipe), :notice => "Recipe Created"
+    else
+      render :new, :locals => {@model => @recipe}
+    end
   end
 
   def show
