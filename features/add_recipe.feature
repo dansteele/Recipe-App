@@ -17,4 +17,3 @@ Feature: Adding Recipes
       And I submit the form
     Then a recipe should not be created
       And I should see a validation error about the title
-      And I should see "There was a problem" in the flash notice

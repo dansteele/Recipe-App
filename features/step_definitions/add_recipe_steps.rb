@@ -26,11 +26,11 @@ Then(/^I should see "(.*?)" in the flash notice$/) do |message|
 end
 
 When(/^I complete the form without a title$/) do
-  pending # express the regexp above with the code you wish you had
+    fill_in "Title", :with => ""
 end
 
 Then(/^a recipe should not be created$/) do
-  pending # express the regexp above with the code you wish you had
+  assert_equal 0, Recipe.count
 end
 
 Then(/^I should see a validation error about the title$/) do

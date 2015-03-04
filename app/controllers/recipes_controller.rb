@@ -5,8 +5,12 @@ class RecipesController < ApplicationController
   end
 
   def create
-    @recipe = Recipe.create(params_whitelist)
-    redirect_to recipe_path(@recipe), :notice => "Recipe Created"
+    @recipe = Recipe.new(params_whitelist) 
+    if @recipe.save
+      redirect_to recipe_path(@recipe), :notice => "Recipe Created"
+    elsif
+      render :new
+    end
   end
 
   def show

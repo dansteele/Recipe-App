@@ -1,3 +1,5 @@
+= render :partial => 'shared/form_errors', :locals => {:model => @recipe}
+
 = form_for @recipe  do |f|
   %fieldset
     = f.label :title
