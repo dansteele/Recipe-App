@@ -1,27 +1,26 @@
-Given(/^I am on the homepage$/) do
-  pending # express the regexp above with the code you wish you had
-end
-
 When(/^I go to add a recipe$/) do
-  pending # express the regexp above with the code you wish you had
+  click_link "Add Recipe"
 end
 
 When(/^I complete the form$/) do
-  pending # express the regexp above with the code you wish you had
+  fill_in "Title", :with => "Carrot & Corriander Pancakes"
 end
 
 When(/^I submit the form$/) do
-  pending # express the regexp above with the code you wish you had
+  click_on "Save"
 end
 
 Then(/^a recipe should be created$/) do
-  pending # express the regexp above with the code you wish you had
+  assert_equal 1, Recipe.where(:title => "Carrot & Corriander Pancakes").count
 end
 
 Then(/^I should see the newly created recipe$/) do
-  pending # express the regexp above with the code you wish you had
+  # save_and_open_page
+  assert page.has_content?("Carrot & Corriander Pancakes")
 end
 
-Then(/^I should see "(.*?)" in the flash notice$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
+Then(/^I should see "(.*?)" in the flash notice$/) do |message|
+  within("#flash") do
+    assert page.has_content?(message)
+  end
 end

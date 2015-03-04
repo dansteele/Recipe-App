@@ -6,9 +6,16 @@
     = javascript_include_tag 'application'
     = csrf_meta_tags
   %body
+    %header
+      #flash
+        Recipe Created
+
     %nav{:id => "sidebar"}
       %h3 Categories
       %ul{:id => "categories"}
         = render @categories
+
+      = link_to "Add Recipe", new_recipe_path
+
     %main
       = yield

@@ -1,8 +1,7 @@
 Feature: Adding Recipes
 
-  @wip
   Scenario: A visitor adds a recipe
-    Given I am on the homepage
+    Given that I am on the homepage
     When I go to add a recipe
       And I complete the form
       And I submit the form
