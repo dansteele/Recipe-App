@@ -34,5 +34,5 @@ Then(/^a recipe should not be created$/) do
 end
 
 Then(/^I should see a validation error about the title$/) do
-  pending # express the regexp above with the code you wish you had
+  assert page.has_content?("Title can't be blank")
 end
