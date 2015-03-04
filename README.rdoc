@@ -1,4 +1,4 @@
 README
 First Rails application. Using Haml, Cucumber and User Stories. The app will have basic functionality like BBC Good Food
 
-The creation of this system will be largely independent of <a href="wegotcoders.com">We Got Coders</a>.
+The creation of this system will be largely independent of We Got Coders.
