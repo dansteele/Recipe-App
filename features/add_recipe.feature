@@ -11,7 +11,7 @@ Feature: Adding Recipes
       And I should see the newly created recipe
       And I should see "Recipe Created" in the flash notice
 
-  @wip
+  # @wip
   Scenario: A visitor adds a recipe without a title
       And I complete the form without a title
       And I submit the form
@@ -19,7 +19,7 @@ Feature: Adding Recipes
       And I should see a validation error about the title
       And I should see "There was a problem" in the flash notice
 
-  # @wip
+  @wip
   Scenario: A visitor adds ingredients to a recipe
     When I complete the form
       And I add "Carrots" as an ingredient
