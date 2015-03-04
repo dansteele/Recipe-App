@@ -24,3 +24,15 @@ Then(/^I should see "(.*?)" in the flash notice$/) do |message|
     assert page.has_content?(message)
   end
 end
+
+When(/^I complete the form without a title$/) do
+  pending # express the regexp above with the code you wish you had
+end
+
+Then(/^a recipe should not be created$/) do
+  pending # express the regexp above with the code you wish you had
+end
+
+Then(/^I should see a validation error about the title$/) do
+  pending # express the regexp above with the code you wish you had
+end
