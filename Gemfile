@@ -46,5 +46,6 @@ group :development, :test do
   gem 'database_cleaner'
 
   gem 'launchy'
+  gem 'pry-byebug'
 end
 
