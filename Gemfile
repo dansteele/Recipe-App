@@ -43,6 +43,7 @@ group :development, :test do
   gem 'spring'
 
   gem 'cucumber-rails', :require => false
+  gem 'rspec-rails', '~> 3.0'
   gem 'database_cleaner'
 end
 
