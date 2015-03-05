@@ -15,8 +15,10 @@ When(/^I complete the form without a title$/) do
     fill_in "Title", :with => ""
 end
 
-When(/^I add "(.*?)" as an ingredient$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
+When(/^I add "(.*?)" as an ingredient$/) do |ingredient|
+  # save_and_open_page
+  fill_in "Name", :with => ingredient
+  # fill_in ""
 end
 
 Then(/^a recipe should be created$/) do
@@ -24,7 +26,6 @@ Then(/^a recipe should be created$/) do
 end
 
 Then(/^I should see the newly created recipe$/) do
-  # save_and_open_page
   assert page.has_content?("Carrot & Corriander Pancakes")
 end
 
